@@ -1,3 +1,14 @@
 EnterCriticalSection(&m_critical);
 g_UnifySend.SendData(&m_DataHead,pData,nDataLen,ts_current,framerate);
 LeaveCriticalSection(&m_critical);
+
+
+if(nDataLen<=1400)
+{
+
+	ts_current=ts_current+timestamp_increse;
+
+	EnterCriticalSection(&m_critical);
+	g_UnifySend.SendData(&m_DataHead,pData,nDataLen,ts_current,framerate);
+	LeaveCriticalSection(&m_critical);
+}
