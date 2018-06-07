@@ -1,0 +1,3 @@
+EnterCriticalSection(&m_critical);
+g_UnifySend.SendData(&m_DataHead,pData,nDataLen,ts_current,framerate);
+LeaveCriticalSection(&m_critical);
